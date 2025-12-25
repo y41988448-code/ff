@@ -12,6 +12,10 @@ let lobbies = [];
 app.get("/lobbies", (req, res) => {
   res.json(lobbies.slice().sort((a,b)=>b.lastSeen-a.lastSeen));
 });
+app.get("/", (req, res) => {
+    res.status(200).send("SR2 backend online");
+});
+
 
 // Create lobby
 app.post("/lobbies", (req, res) => {
